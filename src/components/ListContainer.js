@@ -17,7 +17,7 @@ export default class ListContainer extends Component {
 
             <p>Main: {handleIcons(myCurrentState.main)}</p>
           </div>
-          <div className="col-md-6 col-sm-3 ">
+          <div className="col-md-6  pb-3">
             <SkyIcons handleIcons={handleIcons} main={myCurrentState.main} />
           </div>
         </div>
