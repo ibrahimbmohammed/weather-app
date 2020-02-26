@@ -8,7 +8,7 @@ export default class ListContainer extends Component {
       return (
         <div className="row">
           {" "}
-          <div className="col-md-4 col-sm-4 mt-4">
+          <div className="col-md-6 col-sm-4 mt-4">
             <p>Temperature: {myCurrentState.temperature}</p>
             <p>City: {myCurrentState.city}</p>
             <p>Country: {myCurrentState.country}</p>
@@ -17,7 +17,7 @@ export default class ListContainer extends Component {
 
             <p>Main: {handleIcons(myCurrentState.main)}</p>
           </div>
-          <div className="col-md-3 col-sm-3 icon-cont">
+          <div className="col-md-6 col-sm-3 mb-3">
             <SkyIcons handleIcons={handleIcons} main={myCurrentState.main} />
           </div>
         </div>

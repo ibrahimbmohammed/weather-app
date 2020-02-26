@@ -37,6 +37,11 @@ export default class extends Component {
         error: true,
         pageLoad: false
       });
+    } else if (data.cod === "503") {
+      this.setState({
+        error: true,
+        pageLoad: false
+      });
     } else {
       this.setState({
         temperature: data.main.temp,
