@@ -16,13 +16,16 @@ export default class extends Component {
     description: "",
     main: "",
     error: "",
-    showLabels: false
+    showLabels: false,
+    pageLoad: false
   };
   handleSubmit = async e => {
     e.preventDefault();
     const country = e.target.elements.country.value;
     const city = e.target.elements.city.value;
-
+    this.setState({
+      pageLoad: true
+    });
     const api_call = await fetch(
       `${proxy}https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${key}&units=metric`
     );
@@ -31,7 +34,8 @@ export default class extends Component {
     console.log(data.cod);
     if (data.cod === "404") {
       this.setState({
-        error: true
+        error: true,
+        pageLoad: false
       });
     } else {
       this.setState({
@@ -42,7 +46,8 @@ export default class extends Component {
         description: data.weather["0"].description,
         main: data.weather["0"].main,
         error: false,
-        showLabels: true
+        showLabels: true,
+        pageLoad: false
       });
     }
   };
@@ -94,11 +99,18 @@ export default class extends Component {
       <div className="bg">
         <div className="main-container bg">
           <TitleContainer />
-          <InputContainer handleSubmit={this.handleSubmit} />{" "}
-          <ListContainer
-            myCurrentState={this.state}
-            handleIcons={this.handleIcons}
-          />{" "}
+          <InputContainer handleSubmit={this.handleSubmit} />
+
+          {this.state.pageLoad ? (
+            <div className=" text-center">
+              <h1>Loading...</h1>
+            </div>
+          ) : (
+            <ListContainer
+              myCurrentState={this.state}
+              handleIcons={this.handleIcons}
+            />
+          )}
         </div>
       </div>
     );
