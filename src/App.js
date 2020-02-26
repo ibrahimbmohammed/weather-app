@@ -91,13 +91,15 @@ export default class extends Component {
 
   render() {
     return (
-      <div>
-        <TitleContainer />
-        <InputContainer handleSubmit={this.handleSubmit} />{" "}
-        <ListContainer
-          myCurrentState={this.state}
-          handleIcons={this.handleIcons}
-        />{" "}
+      <div className="bg">
+        <div className="main-container bg">
+          <TitleContainer />
+          <InputContainer handleSubmit={this.handleSubmit} />{" "}
+          <ListContainer
+            myCurrentState={this.state}
+            handleIcons={this.handleIcons}
+          />{" "}
+        </div>
       </div>
     );
   }

@@ -5,6 +5,6 @@ import Skycons from "react-skycons";
 export default class SkyIcons extends React.Component {
   render() {
     const { handleIcons, main } = this.props;
-    return <Skycons color="black" icon={handleIcons(main)} autoplay={true} />;
+    return <Skycons color="white" icon={handleIcons(main)} autoplay={true} />;
   }
 }

@@ -6,15 +6,20 @@ export default class ListContainer extends Component {
     const { myCurrentState, handleIcons } = this.props;
     if (myCurrentState.showLabels && !myCurrentState.error) {
       return (
-        <div>
-          <p>Temperature: {myCurrentState.temperature}</p>
-          <p>City: {myCurrentState.city}</p>
-          <p>Country: {myCurrentState.country}</p>
-          <p>Humidity: {myCurrentState.humidity}</p>
-          <p>Description: {myCurrentState.description}</p>
+        <div className="row">
+          {" "}
+          <div className="col-md-6">
+            <p>Temperature: {myCurrentState.temperature}</p>
+            <p>City: {myCurrentState.city}</p>
+            <p>Country: {myCurrentState.country}</p>
+            <p>Humidity: {myCurrentState.humidity}</p>
+            <p>Description: {myCurrentState.description}</p>
 
-          <p>Main: {handleIcons(myCurrentState.main)}</p>
-          <SkyIcons handleIcons={handleIcons} main={myCurrentState.main} />
+            <p>Main: {handleIcons(myCurrentState.main)}</p>
+          </div>
+          <div className="col-md-6 icon-cont">
+            <SkyIcons handleIcons={handleIcons} main={myCurrentState.main} />
+          </div>
         </div>
       );
     } else if (myCurrentState.error) {

@@ -9,13 +9,14 @@
 }
 .header-title {
   text-align: center;
-  color: rebeccapurple;
 }
 
 .main-container {
   width: 70vw;
-  height: 60vh;
+  height: 100vh;
   margin: auto;
-  background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143)) !important;
   color: white !important;
+}
+.icon-cont {
+  margin-left: 0%;
 }
